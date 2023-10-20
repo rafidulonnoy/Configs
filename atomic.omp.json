@@ -10,7 +10,7 @@
           "leading_diamond": "\u256d\u2500\ue0b6",
           "style": "diamond",
           "trailing_diamond": "\ue0b4",
-          "template": "\ueb99 {{ .UserName }} ",
+          "template": "\ueb99 {{ .UserName }}",
           "type": "shell"
         },
         {
@@ -25,14 +25,14 @@
           "foreground": "#0C212F",
           "powerline_symbol": "\ue0b0",
           "properties": {
-            "folder_icon": " \uf07b ",
-            "home_icon": "\ue617",
-            "style": "folder"
+            "folder_icon": "\uf07b",
+            "home_icon": " \ue617 ",
+            "style": "powerlevel"
           },
           "style": "diamond",
           "leading_diamond": " \ue0b6",
           "trailing_diamond": "\ue0b4",
-          "template": " \uf07b \uea9c {{ .Path }} ",
+          "template": "{{.Path}} ",
           "type": "path"
         },
         {
@@ -46,12 +46,13 @@
           ],
           "leading_diamond": " \ue0b6",
           "properties": {
-            "branch_icon": "\uE0A0 ",
+            "branch_max_length": 25,
+            "fetch_stash_count": true,
             "fetch_status": true,
             "fetch_upstream_icon": true
           },
           "style": "diamond",
-          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }}",
+          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
           "trailing_diamond": "\ue0b4",
           "type": "git"
         },
@@ -93,7 +94,7 @@
             "yarn_icon": " <#348cba>\ue6a7</>"
           },
           "style": "diamond",
-          "template": "\ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}",
+          "template": "\ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }}{{ end }}{{ .Full }}",
           "trailing_diamond": "\ue0b4 ",
           "type": "node"
         },
@@ -218,14 +219,13 @@
           "background": "#26BDBB",
           "foreground": "#0C212F",
           "leading_diamond": "\ue0b6",
-          "trailing_diamond": "\ue0b4 <transparent>",
           "properties": {
             "linux": "\ue712",
             "macos": "\ue711",
             "windows": "\ue70f"
           },
           "style": "diamond",
-          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}}<#262626> </>",
+          "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}}<#262626>  </>",
           "type": "os"
         },
         {
@@ -249,15 +249,30 @@
           "type": "battery"
         },
         {
+          "type": "owm",
+          "style": "diamond",
+          "foreground": "#0C212F",
+          "background": "#26BDBB",
+          "trailing_diamond": "\ue0b4 ",
+          "template": "{{.Weather}} ({{.Temperature}}{{.UnitIcon}})",
+          "properties": {
+            "apikey": "c36aa7dedf4c5715d591fce47132b827",
+            "location": "DHAKA,BD",
+            "units": "metric",
+            "http_timeout": 1000,
+            "cache_timeout": 10
+          }
+        },
+        {
           "background": "#26BDBB",
           "foreground": "#0C212F",
-          "invert_powerline": true,
           "leading_diamond": "\ue0b6",
+          "invert_powerline": true,
           "properties": {
             "time_format": "Mon Jan-_2,3:04 PM"
           },
           "style": "diamond",
-          "template": " \uf073 {{ .CurrentDate | date .Format }} ",
+          "template": "\uf073 {{ .CurrentDate | date .Format }}",
           "trailing_diamond": "\ue0b4",
           "type": "time"
         }
