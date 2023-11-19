@@ -5,7 +5,7 @@
       "alignment": "left",
       "segments": [
         {
-          "background": "#26BDBB",
+          "background": "#b4befe",
           "foreground": "#0C212F",
           "leading_diamond": "\u256d\u2500\ue0b6",
           "style": "diamond",
@@ -21,7 +21,7 @@
           "type": "root"
         },
         {
-          "background": "#26BDBB",
+          "background": "#b4befe",
           "foreground": "#0C212F",
           "powerline_symbol": "\ue0b0",
           "properties": {
@@ -30,14 +30,24 @@
             "style": "powerlevel"
           },
           "style": "diamond",
-          "leading_diamond": " \ue0b6",
-          "trailing_diamond": "\ue0b4",
           "template": "{{.Path}} ",
           "type": "path"
         },
         {
+          "background": "#b4befe",
+          "foreground": "#0C212F",
+          "properties": {
+            "style": "roundrock",
+            "threshold": 0
+          },
+          "style": "diamond",
+          "template": " \ueba2 {{ .FormattedMs }}\u2800",
+          "trailing_diamond": "\ue0b4 <transparent>",
+          "type": "executiontime"
+        },
+        {
           "background": "#0C212F",
-          "foreground": "#26BDBB",
+          "foreground": "#b4befe",
           "foreground_templates": [
             "{{ if or (.Working.Changed) (.Staging.Changed) }}#FF9248{{ end }}",
             "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ff4500{{ end }}",
@@ -55,19 +65,6 @@
           "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
           "trailing_diamond": "\ue0b4",
           "type": "git"
-        },
-        {
-          "background": "#26BDBB",
-          "foreground": "#0C212F",
-          "properties": {
-            "style": "roundrock",
-            "threshold": 0
-          },
-          "style": "diamond",
-          "template": " \ueba2 {{ .FormattedMs }}\u2800",
-          "leading_diamond": " \ue0b6",
-          "trailing_diamond": "\ue0b4 <transparent>",
-          "type": "executiontime"
         },
         {
           "background": "#910000",
@@ -216,7 +213,7 @@
           "type": "kubectl"
         },
         {
-          "background": "#26BDBB",
+          "background": "#b4befe",
           "foreground": "#0C212F",
           "leading_diamond": "\ue0b6",
           "properties": {
@@ -249,27 +246,11 @@
           "type": "battery"
         },
         {
-          "type": "owm",
-          "style": "diamond",
+          "background": "#b4befe",
           "foreground": "#0C212F",
-          "background": "#26BDBB",
-          "trailing_diamond": "\ue0b4 ",
-          "template": "{{.Weather}} ({{.Temperature}}{{.UnitIcon}})",
-          "properties": {
-            "apikey": "c36aa7dedf4c5715d591fce47132b827",
-            "location": "DHAKA,BD",
-            "units": "metric",
-            "http_timeout": 1000,
-            "cache_timeout": 10
-          }
-        },
-        {
-          "background": "#26BDBB",
-          "foreground": "#0C212F",
-          "leading_diamond": "\ue0b6",
           "invert_powerline": true,
           "properties": {
-            "time_format": "Mon Jan-_2,3:04 PM"
+            "time_format": "Mon Jan -_2,3:04 PM"
           },
           "style": "diamond",
           "template": "\uf073 {{ .CurrentDate | date .Format }}",
@@ -284,7 +265,7 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#21c7c7",
+          "foreground": "#b4befe",
           "style": "plain",
           "template": "\u2570\u2500",
           "type": "text"
