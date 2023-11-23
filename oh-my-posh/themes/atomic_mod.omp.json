@@ -250,7 +250,7 @@
           "foreground": "#0C212F",
           "invert_powerline": true,
           "properties": {
-            "time_format": "Mon Jan-_2,3:04 PM"
+            "time_format": "Mon Jan -_2,3:04 PM"
           },
           "style": "diamond",
           "template": "\uf073 {{ .CurrentDate | date .Format }}",
